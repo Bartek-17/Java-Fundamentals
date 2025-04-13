@@ -1,0 +1,10 @@
+Groceries:
+    Bread
+    Butter
+    Milk
+Cleaning Supplies:
+    Soap
+    Dishwashing liquid
+Automotive:
+    Air freshener
+    Windshield washer fluid

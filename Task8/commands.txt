@@ -1,0 +1,9 @@
+javac -cp libs\gson-2.8.9.jar *.java
+java -cp ".;libs\gson-2.8.9.jar" Main
+
+
+select * from table where name like '%tek'
+insert into people values (name = 'John', id = 6, age = 25);
+update table set age = 20 where id=2
+delete from table where name ...
+
