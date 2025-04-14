@@ -4,7 +4,6 @@ import java.util.regex.Pattern;
 
 public class ParenthesesMatcher {
     
-    // Method to check if parentheses in the expression are matched
     public static boolean areParenthesesMatched(String expression) {
         Stack<Character> stack = new Stack<>();
         
@@ -16,27 +15,22 @@ public class ParenthesesMatcher {
         while (matcher.find()) {
             char current = matcher.group().charAt(0);
             
-            // If it's an opening parenthesis, push it onto the stack
             if (current == '(' || current == '{' || current == '[') {
                 stack.push(current);
             } 
-            // If it's a closing parenthesis, check if it matches the last opened one
             else {
                 if (stack.isEmpty()) {
-                    return false;  // Unmatched closing parenthesis
+                    return false;
                 }
                 char lastOpened = stack.pop();
                 if (!isMatchingPair(lastOpened, current)) {
-                    return false;  // Mismatched pair
+                    return false;
                 }
             }
         }
-        
-        // If stack is empty, all parentheses are properly matched
         return stack.isEmpty();
     }
     
-    // Method to check if the opening and closing parentheses are a matching pair
     private static boolean isMatchingPair(char open, char close) {
         return (open == '(' && close == ')') || 
                (open == '{' && close == '}') || 
